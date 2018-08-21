@@ -50,7 +50,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a id="login" class="nav-link py-3 px-0 px-lg-3 rounded " href="#login">로그인</a>
+              <a id="login" class="nav-link py-3 px-0 px-lg-3 rounded" href="#login">로그인</a>
             </li>
           </ul>
         </div>
@@ -60,7 +60,7 @@
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="${context}/resources/img/profile.png" alt="">
+        <img class="img-fluid mb-5 d-block mx-auto" src="${context}/resources/img/dog10.jpg" alt="">
         <h1 class="text-uppercase mb-0">Start Bootstrap</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0">Web Developer - Graphic Artist - User Experience Designer</h2>
@@ -418,12 +418,12 @@
     <!-- Custom scripts for this template -->
     <script src="${context}/resources/js/freelancer.min.js"></script>
 	<script>
-	/* 	document.getElementById('login') 
-		.addEventListener('click',function(){
-			alert('click');
-		});  */
-	 	 $('#login').on('click',function(){
-			alert('loginBtn');
+		/* document.getElementById('id') -> $('#id')로 바뀜, jQuery
+		.addEventListener('click',()=>{
+			alert('클릭');
+		}); */
+		$('#login').on('click',function(){
+			alert('로그인 버튼 누름');
 		});
 	</script>
   </body>

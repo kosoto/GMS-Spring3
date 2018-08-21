@@ -422,7 +422,7 @@
 		.addEventListener('click',()=>{
 			alert('클릭');
 		}); */
-		$('#login').on('click',function(){
+		$('#login').on('click',function(){ 
 			alert('로그인 버튼 누름');
 		});
 	</script>

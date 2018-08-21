@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +48,9 @@
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a id="login" class="nav-link py-3 px-0 px-lg-3 rounded " href="#login">로그인</a>
             </li>
           </ul>
         </div>
@@ -413,7 +417,15 @@
 
     <!-- Custom scripts for this template -->
     <script src="${context}/resources/js/freelancer.min.js"></script>
-
+	<script>
+	/* 	document.getElementById('login') 
+		.addEventListener('click',function(){
+			alert('click');
+		});  */
+	 	 $('#login').on('click',function(){
+			alert('loginBtn');
+		});
+	</script>
   </body>
 
 </html>

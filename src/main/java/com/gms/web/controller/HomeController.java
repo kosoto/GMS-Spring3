@@ -22,7 +22,7 @@ public class HomeController {
 		logger.info("Welcome home! The Context Path is {}.", context);
 		session.setAttribute("context", context);
 		
-		return "main";
+		return "public:common/content.titles";
 	}
 	
 }

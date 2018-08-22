@@ -2,11 +2,24 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="public" template="/WEB-INF/views/common/main.jsp">
-		<put-attribute name="title" value=""/>
-		<put-attribute name="title" value=""/>
-		<put-attribute name="title" value=""/>
-		<put-attribute name="title" value=""/>
+		<put-attribute name="navi" value="/WEB-INF/views/common/navi.jsp"/>
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/common/header.jsp"/>
+		<!-- <put-attribute name="portfolioGridSection" value=""/>
+		<put-attribute name="aboutSection" value="/WEB-INF/views/common/aboutSection.jsp"/>
+		<put-attribute name="contactSection" value="/WEB-INF/views/common/contactSection.jsp"/> -->
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+		<put-attribute name="copyright" value="/WEB-INF/views/common/copyright.jsp"/>
+		<put-attribute name="scrollToTopButton" value="/WEB-INF/views/common/scrollToTopButton.jsp"/>
+		<put-attribute name="portfolioModal1" value="/WEB-INF/views/common/portfolioModal1.jsp"/>
+		<put-attribute name="portfolioModal2" value="/WEB-INF/views/common/portfolioModal2.jsp"/>
+		<put-attribute name="portfolioModal3" value="/WEB-INF/views/common/portfolioModal3.jsp"/>
+		<put-attribute name="portfolioModal4" value="/WEB-INF/views/common/portfolioModal4.jsp"/>
+		<put-attribute name="portfolioModal5" value="/WEB-INF/views/common/portfolioModal5.jsp"/>
+		<put-attribute name="portfolioModal6" value="/WEB-INF/views/common/portfolioModal6.jsp"/>
 	
 	</definition>
-
+<definition name="public:*/*.titles" extends="public">
+	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+</definition>
 </tiles-definitions>

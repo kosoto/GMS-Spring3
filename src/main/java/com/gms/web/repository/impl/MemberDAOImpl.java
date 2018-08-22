@@ -12,7 +12,6 @@ public class MemberDAOImpl implements MemberDAO{
 	@Override
 	public void insert(MemberDTO p) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

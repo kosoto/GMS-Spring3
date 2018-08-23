@@ -4,10 +4,11 @@
 	<definition name="public" template="/WEB-INF/views/common/main.jsp">
 		<put-attribute name="navi" value="/WEB-INF/views/common/navi.jsp"/>
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="content" value=""/>
 		<!-- <put-attribute name="portfolioGridSection" value=""/>
 		<put-attribute name="aboutSection" value="/WEB-INF/views/common/aboutSection.jsp"/>
 		<put-attribute name="contactSection" value="/WEB-INF/views/common/contactSection.jsp"/> -->
+		<put-attribute name="login" value=""/>
 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
 		<put-attribute name="copyright" value="/WEB-INF/views/common/copyright.jsp"/>
 		<put-attribute name="scrollToTopButton" value="/WEB-INF/views/common/scrollToTopButton.jsp"/>
@@ -22,4 +23,5 @@
 <definition name="public:*/*.titles" extends="public">
 	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 </definition>
+
 </tiles-definitions>

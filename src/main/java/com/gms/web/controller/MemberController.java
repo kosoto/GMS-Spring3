@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Member")
+@RequestMapping("/member")
 public class MemberController {
 	@RequestMapping("/add")
 	public void add() {}
@@ -24,8 +24,6 @@ public class MemberController {
 	public void login() {}
 	@RequestMapping("/logout")
 	public void logout() {}
-	@RequestMapping("/move")
-	public void move() {}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
 }

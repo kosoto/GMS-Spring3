@@ -12,23 +12,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
+              <a id="logout" class="nav-link py-3 px-0 px-lg-3 rounded" href="#logout">로그아웃</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a id="login" class="nav-link py-3 px-0 px-lg-3 rounded" href="#login">로그인</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a id="join" class="nav-link py-3 px-0 px-lg-3 rounded" href="#login">회원가입</a>
+              <a id="mypage" class="nav-link py-3 px-0 px-lg-3 rounded" href="#mypage">마이페이지</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
 </div>

@@ -11,7 +11,10 @@
             <div class="col-lg-8 mx-auto">
               <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
               <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="${context}/resources/img/portfolio/cabin.png" alt="">
+              <%-- <img class="img-fluid mb-5" src="${context}/resources/img/portfolio/cabin.png" alt=""> --%>
+              <embed class="img-fluid mb-5" width="450" height="350" loop="loop" autoplay="true" src="${context}/resources/img/eggAndDog.mp4" alt="">
+              <%-- <video width="450" height="350" loop="loop" autoplay="autoplay" 
+              src="${context}/resources/img/eggAndDog.mp4"></video> --%>
               <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
               <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
                 <i class="fa fa-close"></i>

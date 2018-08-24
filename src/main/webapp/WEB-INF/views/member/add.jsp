@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div id="content-box">
+<section id="portfolio">
 	<h2>회원가입</h2>
 	<form id="joinForm" name="joinForm">
 	ID<br>
@@ -45,4 +45,4 @@
 	<input type="checkbox" name="subject" value="html"/> HTML
 	<input type="checkbox" name="subject" value="spring"/> Spring
 	</form>
-</div>
+</section>

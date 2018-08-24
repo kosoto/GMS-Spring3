@@ -1,7 +1,8 @@
 "use strict";
 var app = app || {};
 app = {
-		init : x =>{	
+		init : x =>{
+			
 			console.log("step1");
 			app.session.context(x);
 			app.onCreate();
@@ -10,7 +11,19 @@ app = {
 			console.log("step3");
 			app.setContentView();
 			$("#login").click(()=>{
-				location.href = app.x()+"/move/member/login";
+				location.href = app.x()+"/move/enter/member/login";
+			});
+			$("#logout").click(()=>{
+				location.href = app.x()+"/member/logout";
+			});
+			$("#login_btn").click(()=>{
+				location.href = app.x()+"/member/login";
+			});
+			$("#join").click(()=>{
+				location.href = app.x()+"/move/enter/member/add";
+			});
+			$("#joinBth").click(()=>{
+				location.href = app.x()+"/member/add";
 			});
 		},
 		setContentView : ()=>{

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div id="content-box">
+<section id="portfolio">
 	<table>
 		<tr>
 			<td rowspan="3">
@@ -30,7 +30,6 @@
 		</tr>
 	</table>
 		<a id="moveUpdateForm">정보수정</a> &nbsp; &nbsp;
-		<a id="moveDeleteForm">회원탈퇴</a> &nbsp; &nbsp;
-		<a id="logOut">로그아웃</a>
-</div>
+		<a id="moveDeleteForm">회원탈퇴</a> 
+</section>
 

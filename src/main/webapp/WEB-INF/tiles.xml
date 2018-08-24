@@ -8,7 +8,7 @@
 		<!-- <put-attribute name="portfolioGridSection" value=""/>
 		<put-attribute name="aboutSection" value="/WEB-INF/views/common/aboutSection.jsp"/>
 		<put-attribute name="contactSection" value="/WEB-INF/views/common/contactSection.jsp"/> -->
-		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/> 
 		<put-attribute name="copyright" value="/WEB-INF/views/common/copyright.jsp"/>
 		<put-attribute name="scrollToTopButton" value="/WEB-INF/views/common/scrollToTopButton.jsp"/>
 		<put-attribute name="portfolioModal1" value="/WEB-INF/views/common/portfolioModal1.jsp"/>

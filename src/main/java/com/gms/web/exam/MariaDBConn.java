@@ -14,9 +14,9 @@ public class MariaDBConn {
 					"mariadb", 
 					"mariadb");
 			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM MEMBER");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM MEMBER WHERE MEMBER_ID LIKE 'C5'");
 			if(rs.next()) {
-				s = rs.getString("MEMBERID");
+				s = rs.getString("NAME");
 			}else {
 				s = "접속 실패";
 			}
@@ -25,9 +25,5 @@ public class MariaDBConn {
 		}
 		return s;
 	}
-	
-	public static void main(String[] args) {
 		
-		
-	}
 }

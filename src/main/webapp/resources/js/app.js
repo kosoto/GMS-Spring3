@@ -40,6 +40,17 @@ app = {
 			$("#modify").click(()=>{
 				location.href = app.x()+"/move/enter/member/modify";
 			});
+			$("#modifyBtn").click(()=>{
+				$('#modifyFrom').attr({
+					action:app.x()+"/member/modify",
+					method:"POST"
+				}).submit();
+				
+			});
+			$('remove').click(()=>{
+				location.href = app.x()+"/move/enter/member/remove";
+			});
+			
 		},
 		setContentView : ()=>{
 			console.log("step4 : "+app.j());

@@ -33,8 +33,12 @@ public class MemberController {
 	public void retrieve() {}
 	@RequestMapping("/count")
 	public void count() {}
-	@RequestMapping("/modify")
-	public void modify() {}
+	@RequestMapping(value="/modify",method=RequestMethod.POST)
+	public String modify(@ModelAttribute MemberDTO member,Model model) {
+		memberService.modify(member);
+		//수정된 정보를 retrieve에 보여주는 방법?
+		return "login__success";
+	}
 	@RequestMapping("/remove")
 	public void remove() {}
 	@RequestMapping(value="/login", method=RequestMethod.POST)

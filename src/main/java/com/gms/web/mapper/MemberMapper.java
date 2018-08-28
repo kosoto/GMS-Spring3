@@ -49,8 +49,8 @@ public class MemberMapper implements MemberDAO{
 
 	@Override
 	public void update(MemberDTO p) {
-		// TODO Auto-generated method stub
-		
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.update(ns+".update",p);
 	}
 
 	@Override

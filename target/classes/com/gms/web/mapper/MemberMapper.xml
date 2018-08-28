@@ -19,4 +19,12 @@
   	WHERE MEMBERID LIKE #{memberId}
   	AND PASS LIKE #{pass}
   </select>
+  <select id="update">
+  	UPDATE MEMBER 
+  	SET 
+  	PASS = #{pass},
+  	ROLL = #{roll},
+  	TEAMID = #{teamId}
+  	WHERE MEMBERID LIKE #{memberId} ;
+  </select>
 </mapper>

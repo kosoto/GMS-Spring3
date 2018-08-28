@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="content-box">
-	<form id="updateForm" name="updateForm">
+	<form id="modifyFrom" name="modifyFrom">
 	<table>
 		<tr>
 			<td rowspan="3">
@@ -50,7 +50,7 @@
 		</td>
 		</tr>
 	</table>
-	<input id="updateBtn" type="button" value="수정" />
+	<input id="modifyBtn" type="button" value="수정" />
 	</form>
 </div>
 <form method="POST" enctype="multipart/form-data" action="${context}/member.do?action=fileupload&page=retrieve&userid=${user.memberId}">

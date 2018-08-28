@@ -1,11 +1,13 @@
 package com.gms.web.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
@@ -13,11 +15,14 @@ import com.gms.web.service.MemberService;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
+	static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired MemberDTO member;
 	@Autowired MemberService memberService;
-	@RequestMapping("/add")
-	public String add() {
-		HomeController.logger.info("회원가입{}","성공");
+	@RequestMapping(value="/add", method=RequestMethod.POST)
+	public String add(@ModelAttribute("member") MemberDTO member) {
+		logger.info("회원가입{}","진입");
+		logger.info("name is {}",member.getName());
+		memberService.add(member);
 		return "redirect:/move/enter/member/login";
 	}
 	@RequestMapping("/list")
@@ -32,14 +37,12 @@ public class MemberController {
 	public void modify() {}
 	@RequestMapping("/remove")
 	public void remove() {}
-	@RequestMapping("/login")
-	public String login() {
-		HomeController.logger.info("로그인 {}","성공");
-		Map<String,String> p = new HashMap<>();
-		p.put("memberId", "C5");
-		MemberDTO m = memberService.retrieve(p);
-		System.out.println(m.getName());
-		return "redirect:/move/auth/member/retrieve";
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String login(@ModelAttribute MemberDTO member,
+			Model model) {
+		MemberDTO m = memberService.login(member);
+		if(m != null) model.addAttribute("member",m);
+		return (m !=null)?"login__success":"redirect:/move/enter/member/login";
 	}
 	@RequestMapping("/logout")
 	public String logout() {

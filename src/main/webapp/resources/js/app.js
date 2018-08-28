@@ -2,7 +2,6 @@
 var app = app || {};
 app = {
 		init : x =>{
-			
 			console.log("step1");
 			app.session.context(x);
 			app.onCreate();
@@ -14,16 +13,32 @@ app = {
 				location.href = app.x()+"/move/enter/member/login";
 			});
 			$("#logout").click(()=>{
+				app.session.removeMember();
 				location.href = app.x()+"/member/logout";
 			});
 			$("#login_btn").click(()=>{
-				location.href = app.x()+"/member/login";
+				$("#loginForm").attr({
+					action:app.x()+"/member/login",
+					method:"POST"
+				}).submit();
+				
 			});
 			$("#join").click(()=>{
 				location.href = app.x()+"/move/enter/member/add";
 			});
 			$("#joinBth").click(()=>{
-				location.href = app.x()+"/member/add";
+				/*var form = document.getElementById("joinForm");
+				form.action = app.x()+"/member/add";
+				form.method = "POST";
+				form.submit();*/
+				/*메소드 체이닝*/
+				$('#joinForm').attr({
+					action:app.x()+"/member/add",
+					method:"POST"
+				}).submit();
+			});
+			$("#modify").click(()=>{
+				location.href = app.x()+"/move/enter/member/modify";
 			});
 		},
 		setContentView : ()=>{
@@ -32,7 +47,6 @@ app = {
 };
 app.session = {  //session은 위의 init과 동급, attaching property!!
 		context : x=>{
-			
 			console.log("step2 : "+x);
 			sessionStorage.setItem("context",x);
 			sessionStorage.setItem("css",x+"/resources/css");
@@ -41,6 +55,14 @@ app.session = {  //session은 위의 init과 동급, attaching property!!
 		},
 		path : x=>{
 			return sessionStorage.getItem(x);
+		},
+		setMember : x=>{
+			if(x != "" && x != null){
+				sessionStorage.setItem("member",x);
+			}
+		},
+		removeMember : ()=>{
+			sessionStorage.removeItem("member");
 		}
 }
 app.x = ()=>{
@@ -54,4 +76,7 @@ app.c = ()=>{
 }
 app.i = ()=>{
 	return app.session.path("img");
+}
+app.member = ()=>{
+	return app.session.path("member");
 }

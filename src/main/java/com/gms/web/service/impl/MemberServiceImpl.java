@@ -1,8 +1,13 @@
 package com.gms.web.service.impl;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +16,14 @@ import com.gms.web.repository.MemberDAO;
 import com.gms.web.service.MemberService;
 @Service  //싱글톤 패턴
 public class MemberServiceImpl implements MemberService {
+	Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
 	@Autowired MemberDAO memberDAO;
 	@Override
 	public void add(MemberDTO p) {
-		// TODO Auto-generated method stub
-		
+		String ssn = p.getSsn();
+		p.setAge(String.valueOf((Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))) - (Integer.parseInt("19"+ssn.substring(0, 2)))));
+		p.setGender(((Integer.parseInt(ssn.substring(7,8)) % 2 == 1)?"남":"여"));
+		memberDAO.insert(p);
 	}
 
 	@Override
@@ -31,7 +39,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO retrieve(Map<?, ?> p) {
+	public MemberDTO retrieve(MemberDTO p) {
 		return memberDAO.selectOne(p);
 	}
 
@@ -42,21 +50,20 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void modify(Map<?, ?> p) {
+	public void modify(MemberDTO member) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void remove(Map<?, ?> p) {
+	public void remove(MemberDTO member) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public boolean login(Map<?, ?> p) {
-		// TODO Auto-generated method stub
-		return false;
+	public MemberDTO login(MemberDTO p) {
+		return memberDAO.login(p);
 	}
 
 }

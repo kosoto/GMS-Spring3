@@ -15,7 +15,13 @@
               <a id="logout" class="nav-link py-3 px-0 px-lg-3 rounded" href="#logout">로그아웃</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a id="mypage" class="nav-link py-3 px-0 px-lg-3 rounded" href="#mypage">마이페이지</a>
+              <a id="modify" class="nav-link py-3 px-0 px-lg-3 rounded" href="#mypage">정보수정</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a id="remove" class="nav-link py-3 px-0 px-lg-3 rounded" href="#mypage">회원탈퇴</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a id="mypage" class="nav-link py-3 px-0 px-lg-3 rounded" href="#mypage">${member.name} 페이지</a>
             </li>
           </ul>
         </div>

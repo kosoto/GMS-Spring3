@@ -5,6 +5,18 @@
 <mapper namespace="com.gms.web.mapper.MemberMapper">
   <select id="selectOne" resultType="com.gms.web.domain.MemberDTO">
     SELECT * FROM MEMBER 
-    WHERE MEMBER_ID LIKE #{memberId}
+    WHERE MEMBERID LIKE #{memberId}
+    AND PASS LIKE #{pass}
+  </select>
+  <select id="insert">
+  	INSERT INTO MEMBER
+  	(MEMBERID,PASS,TEAMID,ROLL,NAME,SSN,AGE,GENDER,SUBJECT)
+  	VALUES
+  	(#{memberId},#{pass},#{teamId},#{roll},#{name},#{ssn},#{age},#{gender},#{subject})
+  </select>
+  <select id="login" resultType="com.gms.web.domain.MemberDTO">
+  	SELECT * FROM MEMBER
+  	WHERE MEMBERID LIKE #{memberId}
+  	AND PASS LIKE #{pass}
   </select>
 </mapper>

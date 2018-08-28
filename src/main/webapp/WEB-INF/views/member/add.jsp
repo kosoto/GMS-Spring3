@@ -3,7 +3,7 @@
 	<h2>회원가입</h2>
 	<form id="joinForm" name="joinForm">
 	ID<br>
-	<input type="text" name="userid"/><br>
+	<input type="text" name="memberId" /><br>
 	비밀번호<br>
 	<input type="text" name="pass" /><br>
 	이름 <br>
@@ -13,16 +13,16 @@
 	<input id="joinBth" type="button" value="제출"/>
 	<br>
 소속팀
-	<input type="radio" name="teamid" 
-		value="ateam" />걍놀자
-	<input type="radio" name="teamid" 
-		value="hteam" />지은이네
-	<input type="radio" name="teamid" 
-		value="steam" />왕거북이
-	<input type="radio" name="teamid" 
-		value="cteam" />코딩짱
-		<input type="radio" name="teamid" 
-		value="none" />없음
+	<input type="radio" name="teamId" 
+		value="ATEAM" />걍놀자
+	<input type="radio" name="teamId" 
+		value="HTEAM" />지은이네
+	<input type="radio" name="teamId" 
+		value="STEAM" />왕거북이
+	<input type="radio" name="teamId" 
+		value="CTEAM" />코딩짱
+		<input type="radio" name="teamId" 
+		value="NONE" />없음
 	<br>	
 프로젝트역활
 	<select name="roll" id="roll">

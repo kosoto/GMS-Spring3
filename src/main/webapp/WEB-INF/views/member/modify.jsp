@@ -8,19 +8,21 @@
 			</td>
 			
 			<td>아이디</td>
-			<td colspan="2">${user.memberId}</td>
+			<td colspan="2">
+				<input type="text" id="memberId" readonly="readonly" />
+			</td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td colspan="2">${user.name}</td>
+			<td colspan="2">${member.name}</td>
 		</tr>
 		<tr>
-			<td><a id="moveUpdateForm">비밀번호</a></td>
-			<td colspan="2"><input type="text" name="newPass" placeholder="${user.pass}"/></td>
+			<td>비밀번호</td>
+			<td colspan="2"><input id="newPass" type="text" name="newPass" /></td>
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td>${user.age}</td>
+			<td>${member.age}</td>
 			<td><a id="moveUpdateTeamForm">팀명</a></td>
 			<td>
 				<input type="radio" name="teamid" id="ateam"
@@ -35,7 +37,7 @@
 		</tr>
 		<tr>
 		<td>성별</td>
-		<td>${user.gender}</td>
+		<td> ${member.gender}</td>
 		<td><a id="moveUpdateRollForm">역활</a></td>
 		<td>
 			<select name="roll" id="roll">
@@ -55,3 +57,8 @@
   파일 업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드">
 </form> 
+<script>
+    var member = app.member().lastIndexOf('memberId');
+    alert(member);
+   
+</script>

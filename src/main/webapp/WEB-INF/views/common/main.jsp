@@ -36,15 +36,6 @@
 	<div id="content">
 		<tiles:insertAttribute name="content"/>
 	</div> 
-	<%-- <div id="portfolioGridSection">
-		<tiles:insertAttribute name="portfolioGridSection"/>
-	</div> 
-	<div id="aboutSection">
-		<tiles:insertAttribute name="aboutSection"/>
-	</div> 
-	<div id="contactSection">
-		<tiles:insertAttribute name="contactSection"/>
-	</div>  --%>
 	<div id="footer">
 		<tiles:insertAttribute name="footer"/>
 	</div> 
@@ -89,6 +80,7 @@
     <script src="${context}/resources/js/freelancer.min.js"></script>
 	<script>
 	app.init("${context}");
+	app.session.setMember("${member}");
 	</script>
 
 </body>

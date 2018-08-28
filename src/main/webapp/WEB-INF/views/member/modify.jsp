@@ -58,7 +58,6 @@
   <input type="submit" value="파일업로드">
 </form> 
 <script>
-    var member = app.member().lastIndexOf('memberId');
-    alert(member);
+
    
 </script>

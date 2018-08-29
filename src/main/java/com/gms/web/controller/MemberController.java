@@ -37,7 +37,7 @@ public class MemberController {
 	@RequestMapping(value="/modify",method=RequestMethod.POST)
 	public String modify(@ModelAttribute MemberDTO member,Model model) {
 		System.out.println(member.getPass());
-		//memberService.modify(member);
+		//memberService.modify(member); 
 		//수정된 정보를 retrieve에 보여주는 방법?
 		return "login__success";
 	}

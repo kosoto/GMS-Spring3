@@ -8,28 +8,28 @@
     WHERE MEMBERID LIKE #{memberId}
     AND PASS LIKE #{pass}
   </select>
-  <select id="insert">
+  <insert id="insert">
   	INSERT INTO MEMBER
   	(MEMBERID,PASS,TEAMID,ROLL,NAME,SSN,AGE,GENDER,SUBJECT)
   	VALUES
   	(#{memberId},#{pass},#{teamId},#{roll},#{name},#{ssn},#{age},#{gender},#{subject})
-  </select>
+  </insert>
   <select id="login" resultType="com.gms.web.domain.MemberDTO">
   	SELECT * FROM MEMBER
   	WHERE MEMBERID LIKE #{memberId}
   	AND PASS LIKE #{pass}
   </select>
-  <select id="update">
+  <update id="update">
   	UPDATE MEMBER 
   	SET 
   	PASS = #{pass},
   	ROLL = #{roll},
   	TEAMID = #{teamId}
   	WHERE MEMBERID LIKE #{memberId} 
-  </select>
-  <select id="delete">
+  </update>
+  <delete id="delete">
   	DELETE FROM MEMBER
   	WHERE MEMBERID LIKE #{memberId}
   	AND PASS LIKE #{pass}
-  </select>
+  </delete>
 </mapper>

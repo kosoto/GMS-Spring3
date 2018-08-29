@@ -54,9 +54,7 @@ public class MemberMapper implements MemberDAO{
 
 	@Override
 	public boolean remove(MemberDTO p) {
-		int a = factory.openSession().delete(ns+".delete",p);
-		logger.info("a 는 {}",a);
-		return (a != 0);
+		return ((factory.openSession().delete(ns+".delete",p)) != 0);
 	}
 
 	@Override

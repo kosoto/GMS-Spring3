@@ -32,13 +32,13 @@
 			</td>
 			<td><a id="moveUpdateTeamForm">팀명</a></td>
 			<td>
-				<input type="radio" name="teamId" id="ATEAM"
+				<input type="radio" name="teamId" id="ateam"
 					value="ATEAM" />걍놀자
-				<input type="radio" name="teamId" id="HTEAM"
+				<input type="radio" name="teamId" id="hteam"
 					value="HTEAM" />지은이네
-				<input type="radio" name="teamId" id="STEAM"
+				<input type="radio" name="teamId" id="steam"
 					value="STEAM" />왕거북이
-				<input type="radio" name="teamId" id="CTEAM"
+				<input type="radio" name="teamId" id="cteam"
 					value="CTEAM" />코딩짱 
 			</td>
 		</tr>

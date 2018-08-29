@@ -93,12 +93,14 @@
 	});
 	</script>
 	<script>
-		if($('#name') != null){
+		if($('#memberId').val() != null){
 			var j = JSON.parse(app.member());
 			$('#memberId').val(j.memberId);
 			$('#name').val(j.name);
 			$('#age').val(j.age);
 			$('#gender').val(j.gender);
+			$('#roll').val(j.roll).attr("selected","selected");
+			$("#"+j.teamId).attr('checked', 'checked');
 		}
 	</script>
 </body>

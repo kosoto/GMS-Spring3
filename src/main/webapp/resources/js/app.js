@@ -21,7 +21,6 @@ app = {
 					action:app.x()+"/member/login",
 					method:"POST"
 				}).submit();
-				
 			});
 			$("#join").click(()=>{
 				location.href = app.x()+"/move/enter/member/add";
@@ -41,11 +40,21 @@ app = {
 				location.href = app.x()+"/move/enter/member/modify";
 			});
 			$("#modifyBtn").click(()=>{
+				alert(JSON.parse(app.member()));
+				alert(JSON.parse(app.member()).name);
+				alert(JSON.parse(app.member()).pass);
+				if(($('#pass').val() == "")){//비번이 변경 안되면 참
+					$('#modifyFrom').append(
+					$("<input/>").attr({
+						type:"password",
+						name:"pass",
+						value:JSON.parse(app.member()).pass
+					}));
+				}
 				$('#modifyFrom').attr({
 					action:app.x()+"/member/modify",
 					method:"POST"
 				}).submit();
-				
 			});
 			$('#remove').click(()=>{
 				location.href = app.x()+"/move/enter/member/remove";
@@ -56,7 +65,7 @@ app = {
 								.attr({
 									type:"hidden",
 									name:"memberId",
-									value:JSON.parse(app.member()).memberId, 
+									value:JSON.parse(app.member()).memberId 
 				}))).attr({
 					action:app.x()+"/member/remove",
 					method:"POST"

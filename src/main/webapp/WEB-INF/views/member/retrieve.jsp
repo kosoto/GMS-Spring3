@@ -29,7 +29,5 @@
 		<td>${member.roll}</td>
 		</tr>
 	</table>
-		<a id="moveUpdate">정보수정</a> &nbsp; &nbsp;
-		<a id="moveDelete">회원탈퇴</a> 
 </section>
 

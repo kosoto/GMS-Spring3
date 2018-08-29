@@ -80,9 +80,27 @@
     <script src="${context}/resources/js/freelancer.min.js"></script>
 	<script>
 	app.init("${context}");
-	app.session.setMember("${member}");
+	app.session.setMember({
+		memberId:"${member.memberId}",
+		teamId:"${member.teamId}",
+		name:"${member.name}",
+		ssn:"${member.ssn}",
+		roll:"${member.roll}",
+		pass:"${member.pass}",
+		age:"${member.age}",
+		gender:"${member.gender}",
+		subject:"${member.subject}"
+	});
 	</script>
-
+	<script>
+		if($('#name') != null){
+			var j = JSON.parse(app.member());
+			$('#memberId').val(j.memberId);
+			$('#name').val(j.name);
+			$('#age').val(j.age);
+			$('#gender').val(j.gender);
+		}
+	</script>
 </body>
 </html>
 

@@ -49,14 +49,14 @@ public class MemberMapper implements MemberDAO{
 
 	@Override
 	public void update(MemberDTO p) {
-		SqlSession sqlSession = factory.openSession();
-		sqlSession.update(ns+".update",p);
+		factory.openSession().update(ns+".update",p);
 	}
 
 	@Override
-	public void remove(MemberDTO p) {
-		// TODO Auto-generated method stub
-		
+	public boolean remove(MemberDTO p) {
+		int a = factory.openSession().delete(ns+".delete",p);
+		logger.info("a 는 {}",a);
+		return (a != 0);
 	}
 
 	@Override

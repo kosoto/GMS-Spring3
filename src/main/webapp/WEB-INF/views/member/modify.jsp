@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="content-box">
+
 	<form id="modifyFrom" name="modifyFrom">
 	<table>
 		<tr>
@@ -9,35 +10,43 @@
 			
 			<td>아이디</td>
 			<td colspan="2">
-				<input type="text" id="memberId" readonly="readonly" />
+				<input type="text" id="memberId" name="memberId" readonly="readonly" />
 			</td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td colspan="2">${member.name}</td>
+			<td colspan="2">
+				<input type="text" id="name" name="name" readonly="readonly"/> 
+			</td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
-			<td colspan="2"><input id="newPass" type="text" name="newPass" /></td>
+			<td colspan="2">
+				<input id="pass" type="password" name="pass" />
+			</td>
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td>${member.age}</td>
+			<td>
+				<input type="text" id="age" name="age" readonly="readonly"/>
+			</td>
 			<td><a id="moveUpdateTeamForm">팀명</a></td>
 			<td>
-				<input type="radio" name="teamid" id="ateam"
-					value="ateam" />걍놀자
-				<input type="radio" name="teamid" id="hteam"
-					value="hteam" />지은이네
-				<input type="radio" name="teamid" id="steam"
-					value="steam" />왕거북이
-				<input type="radio" name="teamid" id="cteam"
-					value="cteam" />코딩짱 
+				<input type="radio" name="teamId" id="ATEAM"
+					value="ATEAM" />걍놀자
+				<input type="radio" name="teamId" id="HTEAM"
+					value="HTEAM" />지은이네
+				<input type="radio" name="teamId" id="STEAM"
+					value="STEAM" />왕거북이
+				<input type="radio" name="teamId" id="CTEAM"
+					value="CTEAM" />코딩짱 
 			</td>
 		</tr>
 		<tr>
 		<td>성별</td>
-		<td> ${member.gender}</td>
+		<td> 
+			<input type="text" id="gender" name="gender" readonly="readonly"/>
+		</td>
 		<td><a id="moveUpdateRollForm">역활</a></td>
 		<td>
 			<select name="roll" id="roll">
@@ -53,11 +62,8 @@
 	<input id="modifyBtn" type="button" value="수정" />
 	</form>
 </div>
-<form method="POST" enctype="multipart/form-data" action="${context}/member.do?action=fileupload&page=retrieve&userid=${user.memberId}">
+<%-- <form method="POST" enctype="multipart/form-data" action="${context}/member.do?action=fileupload&page=retrieve&userid=${user.memberId}">
   파일 업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드">
-</form> 
-<script>
+</form>  --%>
 
-   
-</script>

@@ -47,8 +47,20 @@ app = {
 				}).submit();
 				
 			});
-			$('remove').click(()=>{
+			$('#remove').click(()=>{
 				location.href = app.x()+"/move/enter/member/remove";
+			});
+			$("#removeBtn").click(()=>{
+				($("#removeForm")
+						.prepend($("<input/>")
+								.attr({
+									type:"hidden",
+									name:"memberId",
+									value:JSON.parse(app.member()).memberId, 
+				}))).attr({
+					action:app.x()+"/member/remove",
+					method:"POST"
+				}).submit();
 			});
 			
 		},
@@ -68,8 +80,8 @@ app.session = {  //session은 위의 init과 동급, attaching property!!
 			return sessionStorage.getItem(x);
 		},
 		setMember : x=>{
-			if(x != "" && x != null){
-				sessionStorage.setItem("member",x);
+			if(x.memberId != ""){
+				sessionStorage.setItem("member",JSON.stringify(x));
 			}
 		},
 		removeMember : ()=>{

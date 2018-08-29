@@ -25,6 +25,11 @@
   	PASS = #{pass},
   	ROLL = #{roll},
   	TEAMID = #{teamId}
-  	WHERE MEMBERID LIKE #{memberId} ;
+  	WHERE MEMBERID LIKE #{memberId} 
+  </select>
+  <select id="delete">
+  	DELETE FROM MEMBER
+  	WHERE MEMBERID LIKE #{memberId}
+  	AND PASS LIKE #{pass}
   </select>
 </mapper>

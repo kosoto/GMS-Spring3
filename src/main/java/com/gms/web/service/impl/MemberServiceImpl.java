@@ -55,9 +55,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public void remove(MemberDTO member) {
-		// TODO Auto-generated method stub
-		
+	public boolean remove(MemberDTO p) {
+		return memberDAO.remove(p);
 	}
 
 	@Override

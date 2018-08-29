@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,8 +40,14 @@ public class MemberController {
 		//수정된 정보를 retrieve에 보여주는 방법?
 		return "login__success";
 	}
-	@RequestMapping("/remove")
-	public void remove() {}
+	@RequestMapping(value="/remove",method=RequestMethod.POST)
+	public String remove(@ModelAttribute MemberDTO member) {
+		logger.info("넘어온 아이디 {}",member.getMemberId());
+		logger.info("넘어온 비번 {}",member.getPass());
+		
+		return (memberService.remove(member))?"redirect:/":"enter:member/remove.tiles";
+		
+	}
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(@ModelAttribute MemberDTO member,
 			Model model) {

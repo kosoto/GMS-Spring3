@@ -36,7 +36,7 @@ public class MemberController {
 	@RequestMapping(value="/modify",method=RequestMethod.POST)
 	public String modify(@ModelAttribute MemberDTO member,Model model) {
 		memberService.modify(member); 
-		//수정된 정보를 retrieve에 보여주는 방법?
+		//수정된 정보를 retrieve에 보여주는 방법? AJAX에서 하자!
 		return "login__success";
 	}
 	@RequestMapping(value="/remove",method=RequestMethod.POST)

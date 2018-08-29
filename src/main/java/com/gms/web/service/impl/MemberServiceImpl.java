@@ -12,18 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gms.web.domain.MemberDTO;
-import com.gms.web.repository.MemberDAO;
+import com.gms.web.mapper.MemberMapper;
 import com.gms.web.service.MemberService;
 @Service  //싱글톤 패턴
 public class MemberServiceImpl implements MemberService {
 	Logger logger = LoggerFactory.getLogger(MemberServiceImpl.class);
-	@Autowired MemberDAO memberDAO;
+	@Autowired MemberMapper memberMapper;
 	@Override
 	public void add(MemberDTO p) {
 		String ssn = p.getSsn();
-		p.setAge(String.valueOf((Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))) - (Integer.parseInt("19"+ssn.substring(0, 2)))));
+		p.setAge(String.valueOf((Integer.parseInt(new SimpleDateFormat("yyyy").format(new Date()))) - (Integer.parseInt("19"+ssn.substring(0, 2)))+1));
 		p.setGender(((Integer.parseInt(ssn.substring(7,8)) % 2 == 1)?"남":"여"));
-		memberDAO.insert(p);
+		memberMapper.insert(p);
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDTO retrieve(MemberDTO p) {
-		return memberDAO.selectOne(p);
+		return memberMapper.selectOne(p);
 	}
 
 	@Override
@@ -51,17 +51,18 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void modify(MemberDTO member) {
-		memberDAO.update(member);
+		member.setPass(member.getPass().split(",")[0]);
+		memberMapper.update(member);
 	}
 
 	@Override
 	public boolean remove(MemberDTO p) {
-		return memberDAO.remove(p);
+		return memberMapper.remove(p);
 	}
 
 	@Override
 	public MemberDTO login(MemberDTO p) {
-		return memberDAO.login(p);
+		return memberMapper.login(p);
 	}
 
 }

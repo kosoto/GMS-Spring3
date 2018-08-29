@@ -25,6 +25,21 @@
     <!-- Custom styles for this template -->
     <link href="${context}/resources/css/freelancer.min.css" rel="stylesheet">
 
+	 <!-- Bootstrap core JavaScript -->
+    <script src="${context}/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="${context}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="${context}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="${context}/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="${context}/resources/js/jqBootstrapValidation.js"></script>
+    <script src="${context}/resources/js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="${context}/resources/js/freelancer.min.js"></script>
+
   </head>
 <body id="page-top"> 	
 	<div id="navi">
@@ -64,20 +79,7 @@
 		<tiles:insertAttribute name="portfolioModal6"/>
 	</div> 
 	
-	 <!-- Bootstrap core JavaScript -->
-    <script src="${context}/resources/vendor/jquery/jquery.min.js"></script>
-    <script src="${context}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="${context}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="${context}/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="${context}/resources/js/jqBootstrapValidation.js"></script>
-    <script src="${context}/resources/js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="${context}/resources/js/freelancer.min.js"></script>
+	
 	<script>
 	app.init("${context}");
 	app.session.setMember({
@@ -91,17 +93,19 @@
 		gender:"${member.gender}",
 		subject:"${member.subject}"
 	});
-	</script>
-	<script>
-		if($('#memberId').val() != null){
-			var j = JSON.parse(app.member());
-			$('#memberId').val(j.memberId);
-			$('#name').val(j.name);
-			$('#age').val(j.age);
-			$('#gender').val(j.gender);
-			$('#roll').val(j.roll).attr("selected","selected");
-			$("#"+j.teamId).attr('checked', 'checked');
-		}
+/* 	if(member.name != ""){
+	 user.session({
+		memberId:"${member.memberId}",
+		teamId:"${member.teamId}",
+		name:"${member.name}",
+		ssn:"${member.ssn}",
+		roll:"${member.roll}",
+		pass:"${member.pass}",
+		age:"${member.age}",
+		gender:"${member.gender}",
+		subject:"${member.subject}"
+	}); 
+	} */
 	</script>
 </body>
 </html>

@@ -9,15 +9,11 @@
 			</td>
 			
 			<td>아이디</td>
-			<td colspan="2">
-				<input type="text" id="memberId" name="memberId" readonly="readonly" />
-			</td>
+			<td colspan="2" id="memberId"></td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td colspan="2">
-				<input type="text" id="name" name="name" readonly="readonly"/> 
-			</td>
+			<td colspan="2" id="name"></td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
@@ -27,9 +23,7 @@
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td>
-				<input type="text" id="age" name="age" readonly="readonly"/>
-			</td>
+			<td id="age"></td>
 			<td><a id="moveUpdateTeamForm">팀명</a></td>
 			<td>
 				<input type="radio" name="teamId" id="ateam"
@@ -44,9 +38,7 @@
 		</tr>
 		<tr>
 		<td>성별</td>
-		<td> 
-			<input type="text" id="gender" name="gender" readonly="readonly"/>
-		</td>
+		<td id="gender"></td>
 		<td><a id="moveUpdateRollForm">역활</a></td>
 		<td>
 			<select name="roll" id="roll">
@@ -66,4 +58,13 @@
   파일 업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드">
 </form>  --%>
+<script>
+	var j = JSON.parse(app.member());
+	$('#memberId').text(j.memberId);
+	$('#name').text(j.name);
+	$('#age').text(j.age);
+	$('#gender').text(j.gender);
+	$('#roll').val(j.roll).attr("selected","selected");
+	$("#"+j.teamId).attr('checked', 'checked');
+</script>
 

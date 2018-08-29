@@ -1,5 +1,6 @@
 "use strict";
 var app = app || {};
+var user = user || {};
 app = {
 		init : x =>{
 			console.log("step1");
@@ -40,17 +41,15 @@ app = {
 				location.href = app.x()+"/move/enter/member/modify";
 			});
 			$("#modifyBtn").click(()=>{
-				alert(JSON.parse(app.member()));
-				alert(JSON.parse(app.member()).name);
-				alert(JSON.parse(app.member()).pass);
-				if(($('#pass').val() == "")){//비번이 변경 안되면 참
-					$('#modifyFrom').append(
+				if(($('#pass').val() == "")){
+					$('#modifyFrom').prepend(
 					$("<input/>").attr({
 						type:"password",
 						name:"pass",
 						value:JSON.parse(app.member()).pass
-					}));
+						}));
 				}
+				alert("수정 폼 : "+$('#modifyFrom').name.val);
 				$('#modifyFrom').attr({
 					action:app.x()+"/member/modify",
 					method:"POST"
@@ -111,4 +110,10 @@ app.i = ()=>{
 }
 app.member = ()=>{
 	return app.session.path("member");
+}
+user.session = x=>{
+	$.each(x,(k,v)=>{
+		alert('key:'+k+',value:'+v);
+		sessionStorage.setItem(k, v);
+	});
 }

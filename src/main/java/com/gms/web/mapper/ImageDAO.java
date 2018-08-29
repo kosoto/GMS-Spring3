@@ -1,4 +1,4 @@
-package com.gms.web.repository;
+package com.gms.web.mapper;
 
 public interface ImageDAO {
 

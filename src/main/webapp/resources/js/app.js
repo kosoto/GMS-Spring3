@@ -49,6 +49,7 @@ app = {
 						value:JSON.parse(app.member()).pass
 						}));
 				}
+				
 				alert("수정 폼 : "+$('#modifyFrom').name.val);
 				$('#modifyFrom').attr({
 					action:app.x()+"/member/modify",
